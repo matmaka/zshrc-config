@@ -12,8 +12,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git)
 
 set -o vi
-setopt correct
 setopt autocd
+setopt correct
+xset r rate 150 125
 
 if [ -d "/usr/local/texlive/2023/bin/x86_64-linux" ]; then
 	export INFOPATH=/usr/local/texlive/2023/texmf-dist/doc/info:$INFOPATH
