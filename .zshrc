@@ -1,5 +1,6 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export LANG=en_US.UTF-8
 export ZSH="$HOME/.oh-my-zsh"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ZSH_THEME="robbyrussell"
 
@@ -15,10 +16,7 @@ set -o vi
 setopt correct
 setopt autocd
 
-# for better typing
-xset r rate 150 125
-
-if tex 2> /dev/null 1> /dev/null; then
+if [ -d "/usr/local/texlive/2023/bin/x86_64-linux" ]; then
 	export INFOPATH=/usr/local/texlive/2023/texmf-dist/doc/info:$INFOPATH
 	export MANPATH=/usr/local/texlive/2023/texmf-dist/doc/man:/usr/local/man:$MANPATH
 	export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH
