@@ -26,5 +26,5 @@ fi
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-[ -f "$HOME/.aliases.sh" ] && . "$HOME/.aliases.sh"
+[ -f "$HOME/.bash_aliases" ] && . "$HOME/.bash_aliases"
 [ -f "$ZSH/oh-my-zsh.sh" ] && . "$ZSH/oh-my-zsh.sh"
