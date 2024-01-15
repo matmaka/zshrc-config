@@ -1,20 +1,18 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export EDITOR="vim"
 ZSH_THEME="robbyrussell"
 
 zstyle ':omz:update' mode reminder
-zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 7
 
-DISABLE_AUTO_TITLE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git)
+plugins=(git vi-mode zsh-autosuggestions z)
 
-set -o vi
-setopt autocd
 setopt correct
-xset r rate 150 125
+setopt autocd
+autoload -Uz zmv
 
 if [ -d "/usr/local/texlive/2023/bin/x86_64-linux" ]; then
 	export INFOPATH=/usr/local/texlive/2023/texmf-dist/doc/info:$INFOPATH
@@ -22,11 +20,11 @@ if [ -d "/usr/local/texlive/2023/bin/x86_64-linux" ]; then
 	export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH
 fi
 
-if nvm 2> /dev/null 1> /dev/null; then
-	export NVM_DIR="$HOME/.nvm"
+if command -v nvm > "/dev/null" 2>&1; then
+        export NVM_DIR="$HOME/.nvm"
 fi
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-[ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
+[ -f "$HOME/.aliases.sh" ] && . "$HOME/.aliases.sh"
 [ -f "$ZSH/oh-my-zsh.sh" ] && . "$ZSH/oh-my-zsh.sh"
